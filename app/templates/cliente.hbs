@@ -1,0 +1,33 @@
+<h2>Crear un Nuevo Cliente</h2>
+
+<form >
+  <div class="form-group">
+    <label for="">Nombre de Usuario</label>
+    {{input class="form-control value=client.username"}}
+  </div>
+  <div class="form-group">
+    <label for="">Nombres</label>
+    {{input class="form-control value=client.nameClient"}}
+  </div>
+  <div class="form-group">
+    <label for="">Apellidos</label>
+    {{input class="form-control value=client.lastname"}}
+  </div>
+  <div class="form-group">
+    <label for="">Documento</label>
+    {{input class="form-control value=client.idClient"}}
+  </div>
+  <div class="form-group">
+    <label for="">Correo</label>
+    {{input class="form-control value=client.email"}}
+  </div>
+  <div class="form-group">
+    <label for="">Numero de Celular</label>
+    {{input class="form-control value=client.phone"}}
+  </div>
+  <div class="form-group">
+    <label for="">Contraseña</label>
+    {{input class="form-control value=client.password"}}
+  </div>
+  <button  class="btn btn-primary" {{action 'new'}}>Crear Cliente</button>
+</form>

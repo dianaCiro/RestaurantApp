@@ -1,0 +1,16 @@
+<div class align="center">
+  <h2>Busqueda Restaurantes</h2>
+  <br>
+  Busqueda por Nombre <input type="text" name="nameRestaurant">
+  <input type="button" name="btnBuscar" value="Buscar">
+  <br>
+  <br>
+  {{#link-to 'busqueda_avanzada' class="button"}}
+    Busqueda Avanzada
+  {{/link-to}}
+  <br>
+  {{#each model as |restaurantUnit|}}
+    {{restaurans-listing restaurant=restaurantUnit}}
+  {{/each}}
+</div>
+{{outlet}}
