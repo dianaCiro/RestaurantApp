@@ -1,21 +1,7 @@
-import JSONAPISerializer from 'ember-data/serializers/json-api';
+import DS from 'ember-data';
+//import DS from 'ember-data';
 
-export default JSONAPISerializer.extend({
-  serialize(snapshot, options) {
-    var json = this._super(...arguments);
-
-    json.data.attributes.cost = {
-     username: json.data.attributes.username,
-      nameClient: json.data.attributes.nameClient,
-      lastname: json.data.attributes.lastname,
-      idClient: json.data.attributes.idClient,
-      email: json.data.attributes.email,
-      password: json.data.attributes.password,
-      phone: json.data.attributes.phone
-    };
-
-
-
-    return json;
-  },
+ var clienteSerializer = DS.JSONSerializer.extend({
+  primaryKey: 'username'
 });
+export default clienteSerializer;

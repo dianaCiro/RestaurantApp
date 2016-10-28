@@ -1,33 +1,63 @@
-<h2>Crear un Nuevo Cliente</h2>
+<div align="center">
+<div class="page-header">
+  <h1>Crear un Nuevo Cliente<small></small></h1>
+</div >
 
-<form >
-  <div class="form-group">
-    <label for="">Nombre de Usuario</label>
-    {{input class="form-control value=client.username"}}
-  </div>
-  <div class="form-group">
-    <label for="">Nombres</label>
-    {{input class="form-control value=client.nameClient"}}
-  </div>
-  <div class="form-group">
-    <label for="">Apellidos</label>
-    {{input class="form-control value=client.lastname"}}
-  </div>
-  <div class="form-group">
-    <label for="">Documento</label>
-    {{input class="form-control value=client.idClient"}}
-  </div>
-  <div class="form-group">
-    <label for="">Correo</label>
-    {{input class="form-control value=client.email"}}
-  </div>
-  <div class="form-group">
-    <label for="">Numero de Celular</label>
-    {{input class="form-control value=client.phone"}}
-  </div>
-  <div class="form-group">
-    <label for="">Contraseña</label>
-    {{input class="form-control value=client.password"}}
-  </div>
-  <button  class="btn btn-primary" {{action 'new'}}>Crear Cliente</button>
+<form id ="form-create"class="form-horizontal"{{action 'updateSystem' on="submit"}} >
+  <fieldset>
+     <div class="form-group">
+        <label for="" class="col-sm-4 control-label" >Nombre de Usuario</label>
+        <div class="col-sm-4">
+       {{input  placeholder="Username" class="form-control value=cliente.username" valueBinding="username"}}
+       </div>
+    </div>
+    <div class="form-group">
+       <label for="" class="col-sm-4 control-label">Nombres</label>
+       <div class="col-sm-4">
+        {{input  placeholder="Names" class="form-control value=cliente.nameClient" valueBinding="nameClient"}}
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="" class="col-sm-4 control-label">Apellidos</label>
+         <div class="col-sm-4">
+        {{input placeholder="Lastname" class="form-control value=cliente.lastname" valueBinding="lastname"}}
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="" class="col-sm-4 control-label">Documento</label>
+        <div class="col-sm-4">
+       {{input placeholder="Id" class="form-control value=cliente.idClient" valueBinding="idClient"}}
+       </div>
+     </div>
+     <div class="form-group">
+       <label for="" class="col-sm-4 control-label">Correo</label>
+       <div class="col-sm-4">
+       {{input placeholder="Email" class="form-control value=cliente.email" valueBinding="email"}}
+       </div>
+    </div>
+    <div class="form-group">
+        <label for="" class="col-sm-4 control-label">Numero de Celular</label>
+        <div class="col-sm-4">
+        {{input placeholder="Cellphone number" class="form-control value=cliente.phone" valueBinding="phone"}}
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="" class="col-sm-4 control-label">Contraseña</label>
+        <div class="col-sm-4">
+        {{input  placeholder="Password" class="form-control value=cliente.password" valueBinding="password"}}
+        </div>
+    </div>
+    <div class="form-group">
+       <label for="" class="col-sm-4 control-label">Confirmar contraseña</label>
+        <div class="col-sm-4">
+       {{input placeholder="Confirm Password" class="form-control value=cliente.password" valueBinding="password"}}
+       </div>
+    </div>
+      <button class=" btn btn-primary btn-lg" {{action 'new'}}>Registrar</button>
+  </fieldset>
+ 
+  
 </form>
+</div>
+
+ 

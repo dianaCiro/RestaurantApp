@@ -1,6 +1,6 @@
 import DS from 'ember-data';
 
-export default DS.Model.extend({
+var cliente = DS.Model.extend({
 	username: DS.attr(),
 	nameClient: DS.attr(),
 	lastname: DS.attr(),
@@ -9,3 +9,5 @@ export default DS.Model.extend({
 	password: DS.attr(),
 	phone: DS.attr()
 });
+
+export default cliente;
