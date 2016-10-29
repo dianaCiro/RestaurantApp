@@ -48,7 +48,7 @@ import Ember from 'ember';
       console.log(cliente);
        $.ajax({
         type: "POST",
-        url: "https://restaurant-node.herokuapp.com/clientes",  
+        url: "http://restaurant-node.herokuapp.com/clientes",  
         headers: { 'Content-Type': 'application/json'},
         data: cliente
       }).done(function(data) { 

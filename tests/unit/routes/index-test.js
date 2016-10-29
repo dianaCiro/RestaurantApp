@@ -9,3 +9,12 @@ test('it exists', function(assert) {
   let route = this.subject();
   assert.ok(route);
 });
+
+test('debe redirigir a ruta busqueda', function(assert) {
+  let route = this.subject({
+    replaceWith(routeName) {
+      assert.equal(routeName, 'busqueda', 'remplace con ruta busqueda');
+    }
+  });
+  route.beforeModel();
+});

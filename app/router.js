@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('busqueda_avanzada');
   this.route('cliente');
   this.route('allCliententes');
+  this.route('registrar-restaurante');
 });
 
 export default Router;
