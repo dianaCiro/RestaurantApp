@@ -7,7 +7,8 @@ var cliente = DS.Model.extend({
 	idClient: DS.attr(),
 	email: DS.attr(),
 	password: DS.attr(),
-	phone: DS.attr()
+	phone: DS.attr(),
+	cellphone: DS.attr()
 });
 
 export default cliente;

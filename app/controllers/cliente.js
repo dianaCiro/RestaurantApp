@@ -30,18 +30,10 @@ import Ember from 'ember';
     name:null,
     cliente:null,
     actions: {
-        acceptChanges: function () {
-            var name=this.get('name');
-            alert("Mi nombre es"+name);
 
-           /* this.get('newCliente').save().then((cliente) => {
-                this.transitionToRoute('cliente');
-            });*/
-        },
       new: function() {
       console.log('creating new cliente...');
 
-      var model = this.get('model');
 
       var cliente ={
         username: this.get('username'),
@@ -51,9 +43,36 @@ import Ember from 'ember';
         email: this.get('email'),
         password: this.get('password'),
         phone: this.get('phone'),
+        cellphone: this.get('cellphone')
       };
-      alert("Cliente "+cliente);
       console.log(cliente);
+       $.ajax({
+        type: "POST",
+        url: "https://restaurant-node.herokuapp.com/clientes",  
+        headers: { 'Content-Type': 'application/json'},
+        data: cliente
+      }).done(function(data) { 
+    alert("Success");
+}).fail(function(jqXHR, exception){
+
+  var msg = '';
+        if (jqXHR.status === 0) {
+            msg = 'CORS Error.\n Notify Backend.';
+        } else if (jqXHR.status == 404) {
+            msg = 'Requested page not found. [404]';
+        } else if (jqXHR.status == 500) {
+            msg = 'Internal Server Error [500].';
+        } else if (exception === 'parsererror') {
+            msg = 'Requested JSON parse failed.';
+        } else if (exception === 'timeout') {
+            msg = 'Time out error.';
+        } else if (exception === 'abort') {
+            msg = 'Ajax request aborted.';
+        } else {
+            msg = 'Uncaught Error.\n' + jqXHR.responseText;
+        }
+        alert(msg);
+      });
       
     }
     }
