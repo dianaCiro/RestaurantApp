@@ -17,7 +17,7 @@ import Ember from 'ember';
         phone: model.get('phone'),
       });
       console.log("Cliente"+clientee);
-      /*clientee.save().then(function(data) {
+      /*clientee.save().then(function(data) {updateSystem
         // Clear the form.
         $(':input').val('');
       });
@@ -48,10 +48,10 @@ import Ember from 'ember';
       console.log(cliente);
        $.ajax({
         type: "POST",
-        url: "http://haskell-rest.herokuapp.com/clientes",  
+        url: "http://haskell-rest.herokuapp.com/clientes",
         headers: { 'Content-Type': 'application/json'},
         data: cliente
-      }).done(function(data) { 
+      }).done(function(data) {
     alert("Success");
 }).fail(function(jqXHR, exception){
 
@@ -73,7 +73,7 @@ import Ember from 'ember';
         }
         alert(msg);
       });
-      
+
     }
     }
 });
