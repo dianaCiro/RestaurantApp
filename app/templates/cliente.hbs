@@ -3,60 +3,60 @@
   <h1>Crear un Nuevo Cliente<small></small></h1>
 </div >
 
-<form id ="form-create"class="form-horizontal"{{action 'updateSystem' on="submit"}} >
+<form id ="form-create"class="form-horizontal">
   <fieldset>
      <div class="form-group">
         <label for="" class="col-sm-4 control-label" >Nombre de Usuario</label>
         <div class="col-sm-4">
-       {{input  placeholder="Username" class="form-control value=cliente.username" valueBinding="username"}}
+       {{input  placeholder="Username" class="form-control" valueBinding="username"}}
        </div>
     </div>
     <div class="form-group">
        <label for="" class="col-sm-4 control-label">Nombres</label>
        <div class="col-sm-4">
-        {{input  placeholder="Names" class="form-control value=cliente.nameClient" valueBinding="nameClient"}}
+        {{input  placeholder="Names" class="form-control" valueBinding="nameClient"}}
         </div>
     </div>
     <div class="form-group">
         <label for="" class="col-sm-4 control-label">Apellidos</label>
          <div class="col-sm-4">
-        {{input placeholder="Lastname" class="form-control value=cliente.lastname" valueBinding="lastname"}}
+        {{input placeholder="Lastname" class="form-control" valueBinding="lastname"}}
         </div>
     </div>
     <div class="form-group">
         <label for="" class="col-sm-4 control-label">Documento</label>
         <div class="col-sm-4">
-       {{input placeholder="Id" class="form-control value=cliente.idClient" valueBinding="idClient"}}
+       {{input placeholder="Id" class="form-control" valueBinding="idClient"}}
        </div>
      </div>
      <div class="form-group">
        <label for="" class="col-sm-4 control-label">Correo</label>
        <div class="col-sm-4">
-       {{input placeholder="Email" class="form-control value=cliente.email" valueBinding="email"}}
+       {{input placeholder="Email" class="form-control" valueBinding="email"}}
        </div>
     </div>
     <div class="form-group">
         <label for="" class="col-sm-4 control-label">Numero de Telefono</label>
         <div class="col-sm-4">
-        {{input placeholder="Telephone number" class="form-control value=cliente.phone" valueBinding="phone"}}
+        {{input placeholder="Telephone number" class="form-control" valueBinding="phone"}}
         </div>
     </div>
     <div class="form-group">
         <label for="" class="col-sm-4 control-label">Numero de Celular</label>
         <div class="col-sm-4">
-        {{input placeholder="Cellphone number" class="form-control value=cliente.cellphone" valueBinding="cellphone"}}
+        {{input placeholder="Cellphone number" class="form-control" valueBinding="cellphone"}}
         </div>
     </div>
     <div class="form-group">
         <label for="" class="col-sm-4 control-label">Contraseña</label>
         <div class="col-sm-4">
-        {{input  placeholder="Password" class="form-control value=cliente.password" valueBinding="password"}}
+        {{input  placeholder="Password" class="form-control" valueBinding="password"}}
         </div>
     </div>
     <div class="form-group">
        <label for="" class="col-sm-4 control-label">Confirmar contraseña</label>
         <div class="col-sm-4">
-       {{input placeholder="Confirm Password" class="form-control value=cliente.password"}}
+       {{input placeholder="Confirm Password" class="form-control"}}
        </div>
     </div>
       <button class=" btn btn-primary btn-lg" {{action 'new'}}>Registrar</button>
