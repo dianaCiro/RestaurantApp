@@ -9,8 +9,3 @@ export default DS.JSONSerializer.extend({
     	return json;
   	}
 });
-
-/*var clienteSerializer = DS.JSONSerializer.extend({
-  primaryKey: 'id_user'
-});
-export default clienteSerializer;*/
