@@ -6,7 +6,6 @@ import {
 } from 'ember-changeset-validations/validators';
 
 export default {
-  console.log('entro a validaciones'),
   username: [
     validatePresence(true),
     validateLength({ min: 6 })
