@@ -1,45 +1,21 @@
 <div align="center">
 <div class="page-header">
   <h1>Registra tu Restaurante<small></small></h1>
-</div >
+</div>
 
 <form id ="form-register-restaurant" class="form-horizontal" {{action 'updateSystem' on="submit"}} >
   <fieldset>
+    <div class="form-group">
+        <label class="col-sm-4 control-label" >Id Restaurante</label>
+        <div class="col-sm-4">
+       {{input  placeholder="Tranquilo, esto luego va a ser incremental" class="form-control value=restaurant.id_restaurant" valueBinding="id_restaurant"}}
+       </div>
+    </div>
      <div class="form-group">
         <label class="col-sm-4 control-label" >Nombre de Restaurante</label>
         <div class="col-sm-4">
-       {{input  placeholder="Ej: Taquitos" class="form-control value=restaurant.name" valueBinding="name"}}
+       {{input  placeholder="Ej: Taquitos" class="form-control value=restaurant.name_restaurant" valueBinding="name_restaurant"}}
        </div>
-    </div>
-    <div class="form-group">
-       <label for="" class="col-sm-4 control-label">Direccion</label>
-       <div class="col-sm-4">
-        {{input  placeholder="Ej. Calle 68A Sur # 43A - 41 Sabaneta" class="form-control value=restaurant.address" valueBinding="address"}}
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="" class="col-sm-4 control-label">Imagenes</label>
-         <div class="col-sm-4">
-        {{input placeholder="Botón Imagenes" class="form-control value=restaurant.images" valueBinding="images"}}
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="" class="col-sm-4 control-label">Horario</label>
-        <div class="col-sm-4">
-       {{input placeholder="Ej. MJ 8-22, SD 9-21" class="form-control value=restaurant.timetable" valueBinding="timetable"}}
-       </div>
-     </div>
-     <div class="form-group">
-       <label for="" class="col-sm-4 control-label">Especialidad</label>
-       <div class="col-sm-4">
-       {{input placeholder="Ej. Comida Mexicana" class="form-control value=restaurant.specialty" valueBinding="specialty"}}
-       </div>
-    </div>
-    <div class="form-group">
-        <label for="" class="col-sm-4 control-label">Numero de Telefono</label>
-        <div class="col-sm-4">
-        {{input placeholder="ej. (4) 2886736" class="form-control value=restaurant.phone" valueBinding="phone"}}
-        </div>
     </div>
     <div class="form-group">
         <label for="" class="col-sm-4 control-label">Correo Electronico</label>
@@ -51,6 +27,12 @@
         <label for="" class="col-sm-4 control-label">Descripción</label>
         <div class="col-sm-4">
         {{textarea  placeholder="Ej. Comida mexicana de excelente sabor y calidad" class="form-control value=restaurant.description" valueBinding="description"}}
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="" class="col-sm-4 control-label">Descripción</label>
+        <div class="col-sm-4">
+        {{textarea  placeholder="Id de la franquicia" class="form-control value=restaurant.admin" valueBinding="admin"}}
         </div>
     </div>
       <button class=" btn btn-primary btn-lg" {{action 'registrar'}}>Registrar</button>
