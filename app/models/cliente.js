@@ -7,6 +7,7 @@ export default DS.Model.extend({
 	idClient: DS.attr(),
 	email: DS.attr(),
 	password: DS.attr(),
+	passwordConfirmation: DS.attr(),
 	phone: DS.attr(),
 	cellphone: DS.attr()
-}); 
+});

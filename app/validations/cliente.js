@@ -1,21 +1,27 @@
-import {
+import{
   validatePresence,
   validateLength,
   validateConfirmation,
   validateFormat
-} from 'ember-changeset-validations/validators';
+}from 'ember-changeset-validations/validators';
+
+console.log('entro a validaciones');
 
 export default {
-  console.log('entro a validaciones'),
   username: [
-    validatePresence(true),
-    validateLength({ min: 6 })
+  validatePresence({presence:true, message: 'Se requiere nombre de usuario'}),
+  validateLength({min: 6, message: 'Tamaño del nombre de usuario corto'})
   ],
-  nameClient: validatePresence(true),
-  lastname: validatePresence(true),
-  idClient: validatePresence(true),
-  email: validateFormat({ type: 'email' }),
-  password: validateLength({ min: 8 }),
-  phone: validatePresence(true),
-  cellphone: validatePresence(true)
+  nameClient: validatePresence({presence: true, message: 'Nombre de cliente requerido'}),
+  lastname: validatePresence({presence: true, message: 'Apellidos requeridos'}),
+  idClient: validatePresence({presence: true, message:'Número de documento requerido'}),
+  email: [
+  validatePresence({presence: true, message: 'Email requerido'}),
+  validateFormat({type: 'email', message: 'Email no valido'})
+  ],
+  password: [
+  validatePresence({presence:true, message: 'Password requerido'}),
+  validateLength({min: 6, message: 'Password muy corto'})
+  ],
+  passwordConfirmation: validateConfirmation({on: 'password', message: 'Password no es coincidente'})
 };
