@@ -1,19 +1,14 @@
 import Ember from 'ember';
+import validations from '../validations/restaurantValids';
 
 export default Ember.Controller.extend({
-  //Este controlador recibe el modelo del router registrar-restaurante
+  validations,
   actions: {
-    registrar(){
-      let restaurant = {
-        id_restaurant: this.get('id_restaurant'),
-        name_restaurant: this.get('name_restaurant'),
-        description: this.get('description'),
-        email: this.get('email'),
-        admin: this.get('admin')
-      };
-      console.log(restaurant);
-      let restaurantModel = this.get('store').createRecord('restaurant',restaurant);
-      console.log("from store= " + restaurantModel);
+    save(changeset){
+      changeset.save();
+    },
+    rollback(changeset){
+      changeset.rollback();
     }
   }
 });

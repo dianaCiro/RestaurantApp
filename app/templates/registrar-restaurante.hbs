@@ -1,42 +1,4 @@
-<div align="center">
-<div class="page-header">
-  <h1>Registra tu Restaurante<small></small></h1>
-</div>
-
-<form id ="form-register-restaurant" class="form-horizontal" {{action 'updateSystem' on="submit"}} >
-  <fieldset>
-    <div class="form-group">
-        <label class="col-sm-4 control-label" >Id Restaurante</label>
-        <div class="col-sm-4">
-       {{input  placeholder="Tranquilo, esto luego va a ser incremental" class="form-control value=restaurant.id_restaurant" value=id_restaurant}}
-       </div>
-    </div>
-     <div class="form-group">
-        <label class="col-sm-4 control-label" >Nombre de Restaurante</label>
-        <div class="col-sm-4">
-       {{input  placeholder="Ej: Taquitos" class="form-control value=restaurant.name_restaurant" value=name_restaurant}}
-       </div>
-    </div>
-    <div class="form-group">
-        <label for="" class="col-sm-4 control-label">Correo Electronico</label>
-        <div class="col-sm-4">
-        {{input placeholder="Ej. taquitos@taquitos.com" class="form-control value=restaurant.email" value=email}}
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="" class="col-sm-4 control-label">Descripción</label>
-        <div class="col-sm-4">
-        {{textarea  placeholder="Ej. Comida mexicana de excelente sabor y calidad" class="form-control value=restaurant.description" value=description}}
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="" class="col-sm-4 control-label">Descripción</label>
-        <div class="col-sm-4">
-        {{textarea  placeholder="Id de la franquicia" class="form-control value=restaurant.admin" value=admin}}
-        </div>
-    </div>
-      <button class=" btn btn-primary btn-lg" {{action 'registrar'}}>Registrar</button>
-  </fieldset>
-</form>
-</div>
-{{outlet}}
+{{new-restaurant
+      changeset=(changeset model validations)
+      save=(action "save")
+      rollback=(action "rollback")}}

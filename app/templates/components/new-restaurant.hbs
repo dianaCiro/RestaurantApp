@@ -1,0 +1,49 @@
+<div align="center">
+<div class="page-header">
+  <h1>Registra tu Restaurante<small></small></h1>
+</div>
+
+<form id ="form-register-restaurant" class="form-horizontal" {{action 'updateSystem' on="submit"}} >
+  <fieldset>
+     <div class="form-group">
+        <label class="col-sm-4 control-label" >Nombre de Restaurante</label>
+        <div class="col-sm-4">
+       {{input  placeholder="Ej: Taquitos" class="form-control" value=changeset.name_restaurant}}
+       </div>
+       {{#if changeset.error.name_restaurant}}
+         <span class="help-block">{{changeset.error.name_restaurant.validation}}</span>
+       {{/if}}
+    </div>
+    <div class="form-group">
+        <label for="" class="col-sm-4 control-label">Correo Electronico</label>
+        <div class="col-sm-4">
+        {{input placeholder="Ej. taquitos@taquitos.com" class="form-control" value=changeset.email}}
+        </div>
+        {{#if changeset.error.email}}
+          <span class="help-block">{{changeset.error.email.validation}}</span>
+        {{/if}}
+    </div>
+    <div class="form-group">
+        <label for="" class="col-sm-4 control-label">Descripción</label>
+        <div class="col-sm-4">
+        {{textarea  placeholder="Ej. Comida mexicana de excelente sabor y calidad" class="form-control" value=changeset.description}}
+        </div>
+        {{#if changeset.error.description}}
+          <span class="help-block">{{changeset.error.description.validation}}</span>
+        {{/if}}
+    </div>
+    <div class="form-group">
+        <label for="" class="col-sm-4 control-label">Administrador</label>
+        <div class="col-sm-4">
+        {{textarea  placeholder="Id del admin" class="form-control" value=changeset.admin}}
+        </div>
+        {{#if changeset.error.admin}}
+          <span class="help-block">{{changeset.error.admin.validation}}</span>
+        {{/if}}
+    </div>
+      <button class=" btn btn-primary btn-lg" {{action 'save'}}>Registrar</button>
+      <button class=" btn btn-primary btn-lg" {{action 'rollback'}}>Cancelar</button>
+  </fieldset>
+</form>
+</div>
+{{outlet}}
