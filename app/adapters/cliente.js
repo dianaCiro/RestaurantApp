@@ -1,5 +1,8 @@
 import DS from 'ember-data';
 
-export default DS.JSONAPIAdapter.extend({
-	host: 'http://haskell-rest.herokuapp.com'
-}); 
+export default DS.RESTAdapter.extend({
+	host: 'http://haskell-rest.herokuapp.com',
+	/*headers: {
+  	'Content-Type': 'application/json'
+  }*/
+});
