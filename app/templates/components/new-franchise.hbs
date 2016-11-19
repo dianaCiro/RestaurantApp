@@ -1,0 +1,139 @@
+<div align="center">
+<div class="page-header">
+  <h1>Registra tu Restaurante<small></small></h1>
+</div>
+<!--{
+  "name_franchise":"Subway Ruta N",
+  "restaurant":1,
+  "address":"Calle falsa 123",
+  "city":1,
+  "phone":"1234567",
+  "latitude":6.2441234,
+  "longitude":-75.345234,
+  "open_time_week":"10:00",
+  "close_time_week":"20:00",
+  "open_time_weekend":"11:00",
+  "close_time_weekend":"21:00",
+  "photos":[
+    "url1",
+    "url2",
+    "url3"
+  ]
+}-->
+
+<form id ="form-register-fran" class="form-horizontal" {{action 'updateSystem' on="submit"}} >
+  <fieldset>
+     <div class="form-group">
+        <label class="col-sm-4 control-label" >Nombre de Franquicia</label>
+        <div class="col-sm-4">
+       {{input  placeholder="Ej: Taquitos Restaurant" class="form-control" value=changeset.name_franchise}}
+       </div>
+       {{#if changeset.error.name_franchise}}
+         <span class="help-block">{{changeset.error.name_franchise.validation}}</span>
+       {{/if}}
+    </div>
+    <div class="form-group">
+        <label for="" class="col-sm-4 control-label">Restaurante</label>
+        <div class="col-sm-4">
+        {{input placeholder="Id de restaurante" class="form-control" value=changeset.restaurant}}
+        </div>
+        {{#if changeset.error.restaurant}}
+          <span class="help-block">{{changeset.error.restaurant.validation}}</span>
+        {{/if}}
+    </div>
+    <div class="form-group">
+        <label for="" class="col-sm-4 control-label">Direccion</label>
+        <div class="col-sm-4">
+        {{textarea  placeholder="Ej. Calle 68A Sur #43 A 41 Sabaneta" class="form-control" value=changeset.address}}
+        </div>
+        {{#if changeset.error.address}}
+          <span class="help-block">{{changeset.error.address.validation}}</span>
+        {{/if}}
+    </div>
+    <div class="form-group">
+        <label for="" class="col-sm-4 control-label">Ciudad</label>
+        <div class="col-sm-4">
+        {{textarea  placeholder="Id de la ciudad" class="form-control" value=changeset.city}}
+        </div>
+        {{#if changeset.error.city}}
+          <span class="help-block">{{changeset.error.city.validation}}</span>
+        {{/if}}
+    </div>
+    <div class="form-group">
+        <label for="" class="col-sm-4 control-label">Teléfono</label>
+        <div class="col-sm-4">
+        {{textarea  placeholder="2889828" class="form-control" value=changeset.phone}}
+        </div>
+        {{#if changeset.error.phone}}
+          <span class="help-block">{{changeset.error.phone.validation}}</span>
+        {{/if}}
+    </div>
+    <div class="form-group">
+        <label for="" class="col-sm-4 control-label">Latitud</label>
+        <div class="col-sm-4">
+        {{textarea  placeholder="6.23478867" class="form-control" value=changeset.latitude}}
+        </div>
+        {{#if changeset.error.latitude}}
+          <span class="help-block">{{changeset.error.latitude.validation}}</span>
+        {{/if}}
+    </div>
+    <div class="form-group">
+        <label for="" class="col-sm-4 control-label">Longitud</label>
+        <div class="col-sm-4">
+        {{textarea  placeholder="-76.23478867" class="form-control" value=changeset.longitude}}
+        </div>
+        {{#if changeset.error.longitude}}
+          <span class="help-block">{{changeset.error.longitude.validation}}</span>
+        {{/if}}
+    </div>
+    <div class="form-group">
+        <label for="" class="col-sm-4 control-label">Hora Apertura en Semana</label>
+        <div class="col-sm-4">
+        {{textarea  placeholder="08:00" class="form-control" value=changeset.open-time-week}}
+        </div>
+        {{#if changeset.error.open-time-week}}
+          <span class="help-block">{{changeset.error.open-time-week.validation}}</span>
+        {{/if}}
+    </div>
+    <div class="form-group">
+        <label for="" class="col-sm-4 control-label">Hora Clausura en Semana</label>
+        <div class="col-sm-4">
+        {{textarea  placeholder="22:00" class="form-control" value=changeset.close-time-week}}
+        </div>
+        {{#if changeset.error.close-time-week}}
+          <span class="help-block">{{changeset.error.close-time-week.validation}}</span>
+        {{/if}}
+    </div>
+    <div class="form-group">
+        <label for="" class="col-sm-4 control-label">Hora Apertura en Fin de Semana</label>
+        <div class="col-sm-4">
+        {{textarea  placeholder="08:00" class="form-control" value=changeset.open-time-weekend}}
+        </div>
+        {{#if changeset.error.open-time-weekend}}
+          <span class="help-block">{{changeset.error.open-time-weekend.validation}}</span>
+        {{/if}}
+    </div>
+    <div class="form-group">
+        <label for="" class="col-sm-4 control-label">Hora Clausura en Fin de Semana</label>
+        <div class="col-sm-4">
+        {{textarea  placeholder="22:00" class="form-control" value=changeset.close-time-weekend}}
+        </div>
+        {{#if changeset.error.close-time-weekend}}
+          <span class="help-block">{{changeset.error.close-time-weekend.validation}}</span>
+        {{/if}}
+    </div>
+    <div class="form-group">
+        <label for="" class="col-sm-4 control-label">Fotos</label>
+        <div class="col-sm-4">
+        {{textarea  placeholder="http://foodsogoodmall.com/wp-content/uploads/2015/02/taquitos.jpg" class="form-control" value=changeset.photos}}
+        </div>
+        {{#if changeset.error.photos}}
+          <span class="help-block">{{changeset.error.photos.validation}}</span>
+        {{/if}}
+    </div>
+      <button class=" btn btn-primary btn-lg" {{action 'save'}}>Registrar</button>
+      <button class=" btn btn-primary btn-lg" {{action 'rollback'}}>Cancelar</button>
+  </fieldset>
+</form>
+</div>
+{{outlet}}

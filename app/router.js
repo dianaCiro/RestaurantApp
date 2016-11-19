@@ -12,6 +12,7 @@ Router.map(function() {
   this.route('cliente');
   this.route('allCliententes');
   this.route('registrar-restaurante');
+  this.route('registrar-franchise');
 });
 
 export default Router;
