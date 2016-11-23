@@ -16,13 +16,13 @@ export default Ember.Component.extend({
 	    	}
 
 			if(this.get('changeset', 'isValid')){
-				var res = this.attrs.save(this.get('changeset'));
-				//console.log(res.Response);
-				/*if(res.tipo === 'Error'){
+				var promise = this.attrs.save(this.get('changeset'));
+				promise.then(function(){
+					var errorAttr = promise._result.campos[0];
 					document.getElementById('errors').style.display = 'block';
-					$('.errors-container').html('Esta identificación ya existe');
-					$('#identification').addClass('has-error');
-				}*/
+					$('.errors-container').html('Ya existe un usuario con este '+errorAttr);
+					$('#'+errorAttr).addClass('has-error');
+				});
 			}else{
 				console.log('record no valido');
 			}

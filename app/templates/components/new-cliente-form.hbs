@@ -6,7 +6,7 @@
 <form id ="form-create"class="form-horizontal">
   <div class="errors-container" id="errors"></div>
   <fieldset>
-      <div class="form-group {{if changeset.error.username 'has-error'}}">
+      <div class="form-group {{if changeset.error.username 'has-error'}}" id=username>
         <label for="" class="col-sm-4 control-label" >Nombre de Usuario</label>
         <div class="col-sm-4 controls">
           {{input  placeholder="Ingrese su nombre de usuario" class="form-control" value=changeset.username}}

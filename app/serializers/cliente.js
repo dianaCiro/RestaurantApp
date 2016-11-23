@@ -13,12 +13,12 @@ export default DS.JSONSerializer.extend({
 	    	"phone": json.phone,
 	    	"password": json.password
 	    };
-	    console.log(data);
+	    // console.log(data);
 
     	return data;
   	},
-		normalizeResponse(store, primaryModelClass, payload, id, requestType) {
-			store.payload = payload;
+	normalizeResponse(store, primaryModelClass, payload, id, requestType) {
+		store.payload = payload;
 	    return this._super(store, primaryModelClass, payload, id, requestType);
   	},
 });
