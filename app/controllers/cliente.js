@@ -5,8 +5,11 @@ export default Ember.Controller.extend({
 	ClienteValidations,
 	actions: {
     save(changeset){
-      //return(changeset.save());
-      if(changeset.get('identification') === '147852'){
+      changeset.save().then(result=>{
+				console.log(result.store.payload);
+			});
+
+      /*if(changeset.get('identification') === '147852'){
       	var res = {
       		tag: 'ResultadoConCampos',
       		mensaje: 'Key identification = identificacion ya existe',
@@ -22,7 +25,7 @@ export default Ember.Controller.extend({
 		};
 				sessionStorage.setItem("creation",changeset.get('username'));
 				this.transitionToRoute('created-cliente');
-      }
+      }*/
     },
     rollback(changeset){
       changeset.rollback();

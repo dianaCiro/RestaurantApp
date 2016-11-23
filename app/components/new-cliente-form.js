@@ -17,11 +17,12 @@ export default Ember.Component.extend({
 
 			if(this.get('changeset', 'isValid')){
 				var res = this.attrs.save(this.get('changeset'));
-				if(res.tipo === 'Error'){
+				//console.log(res.Response);
+				/*if(res.tipo === 'Error'){
 					document.getElementById('errors').style.display = 'block';
 					$('.errors-container').html('Esta identificación ya existe');
 					$('#identification').addClass('has-error');
-				}
+				}*/
 			}else{
 				console.log('record no valido');
 			}
