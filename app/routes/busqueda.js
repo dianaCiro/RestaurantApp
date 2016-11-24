@@ -2,6 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model(){
-    return this.get('store').findAll('restaurant');
+    var parameter = 'DF'
+    return new Ember.RSVP.Promise(resolve => {
+      this.store.findAll('restaurant').then(services => {
+        resolve(services.filterBy('name_restaurant',parameter));
+      });
+    });
   }
 });
