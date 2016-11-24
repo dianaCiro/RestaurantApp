@@ -16,6 +16,8 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+      usingCors: true,
+      corsWithCreds:  false
     }
   };
 
@@ -45,7 +47,7 @@ module.exports = function(environment) {
   ENV.contentSecurityPolicy = {
     // ... other stuff here
     'connect-src': "'self' https://restaurant-node.herokuapp.com",
-    'connect-src': "'self' https://restaurants-udea-soft.herokuapp.com"
+    //'connect-src': "'self' https://restaurants-udea-soft.herokuapp.com"
   }
 
   return ENV;

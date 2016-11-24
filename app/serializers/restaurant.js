@@ -19,6 +19,6 @@ export default DS.JSONSerializer.extend({
   	},
   normalizeResponse(store, primaryModelClass, payload, id, requestType) {
 		store.payload = payload;
-	    return this._super(store, primaryModelClass, payload, id, requestType);
+	    return this._super(store, primaryModelClass, payload, id, requestType); //convert classic json in json API Format
   	}
 });
