@@ -1,8 +1,36 @@
 <div align = "center">
-  <h2>Busqueda Avanzada</h2>
-  <br>
-  {{#link-to 'busqueda' class="button"}}
-    Busqueda
-  {{/link-to}}
+  <h1>Busqueda Avanzada</h1>
+  <form id ="form-advanced"class="form-horizontal" >
+  	<div>
+  		<fieldset>
+  			<div class="form-group">
+  				<label class="col-sm-4 control-label">En que lugar desea comer?</label>
+	  			<div class="col-sm-4">
+	  				{{input  placeholder="Ciudad" class="form-control " valueBinding="city"}}
+	  			</div>
+  			</div>
+  			<div class="form-group">
+  				<label class="col-sm-4 control-label">Ingrese una puntuacion</label>
+	  			<div class="col-sm-4">
+	  				{{input  placeholder="Puntuacion" class="form-control " valueBinding="points"}}
+	  			</div>
+  			</div>
+  			<div class="form-group">
+  				<label class="col-sm-4 control-label">Tipo de cocina</label>
+	  			<div class="col-sm-4">
+	  				{{input  placeholder="Tipo de Cocina" class="form-control " valueBinding="cook"}}
+	  			</div>
+  			</div>
+  			<div class="form-group">
+  				<label class="col-sm-4 control-label">Rango de Precios</label>
+	  			<div class="col-sm-4">
+	  				{{input  placeholder="Precio Menor" class="form-control " valueBinding="minPrice"}}
+	  				{{input  placeholder="Precio Mayor" class="form-control " valueBinding="maxPrice"}}
+	  			</div>
+  			</div>
+  			<button class=" btn btn-primary btn-lg" >Buscar</button>
+  		</fieldset>
+  	</div>
+  </form>
 </div>
 {{outlet}}
