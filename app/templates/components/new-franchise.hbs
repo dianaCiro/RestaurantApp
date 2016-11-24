@@ -21,7 +21,7 @@
 }-->
 
   <form id="form-register-fran" class="form-horizontal" {{action 'updateSystem' on="submit"}}>
-
+    <div class="errors-container" id="errors"></div>
     <div class="form-group {{if changeset.error.name_franchise 'has-error'}} ">
       <p>Nombre de Franquicia</p>
       {{input placeholder="Ej: Taquitoss Restaurant" value=changeset.name_franchise}}
