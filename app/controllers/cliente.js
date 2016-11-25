@@ -10,7 +10,8 @@ export default Ember.Controller.extend({
     save:function(changeset){
       var promise = changeset.save().then(result=>{
         var payload = result.store.payload;
-        if(payload.tipo === 'Success'){
+        if(payload.tipo == 'Success'){
+          console.log('exitoso');
           sessionStorage.setItem("creation",changeset.get('username'));
           this.transitionToRoute('created-cliente');
         }else{

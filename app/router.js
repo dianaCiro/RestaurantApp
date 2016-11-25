@@ -15,6 +15,7 @@ Router.map(function() {
   this.route('registrar-franchise');
   this.route('created-cliente');
   this.route('reservas');
+  this.route('init-session');
 });
 
 export default Router;

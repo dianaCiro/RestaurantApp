@@ -7,5 +7,12 @@ export default Ember.Route.extend({
     }else{
     	sessionStorage.removeItem("creation");
     }
+  },
+
+  actions:{
+  	redirect:function(){
+  		window.location.replace("https://restaurante-a-la-mano.herokuapp.com");
+  	}
   }
+
 });

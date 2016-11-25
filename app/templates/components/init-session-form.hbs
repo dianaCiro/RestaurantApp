@@ -1,0 +1,24 @@
+<div align="center">
+	<div class="page-header">
+	  	<h1>Inicia sesión<small></small></h1>
+	</div >
+	<form id ="form-init" class="form-horizontal">
+	  	<div class="errors-container" id="errors"></div>
+	  	<fieldset>
+	      	<div class="form-group">
+	        	<label for="" class="col-sm-4 control-label" >Nombre de Usuario</label>
+	       		<div class="col-sm-4 controls">
+		          	{{input  placeholder="Ingrese su nombre de usuario" class="form-control" id="username" value=changeset.username}}
+	        	</div>
+	      	</div>
+	    	<div class="form-group">
+		       	<label for="" class="col-sm-4 control-label">Contraseña</label>
+		       	<div class="col-sm-4">
+	        		{{input  placeholder="Ingrese su contraseña" class="form-control" id="password" value=changeset.password}}
+	        	</div>
+	    	</div>    
+	      	<button class=" btn btn-primary btn-lg" {{action "save"}}>Iniciar Sesión</button>
+	      	<button class=" btn btn-primary btn-lg" {{action "rollback"}}>Cancelar</button>
+	  </fieldset>
+	</form>
+</div>

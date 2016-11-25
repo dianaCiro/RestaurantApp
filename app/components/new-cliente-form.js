@@ -21,10 +21,12 @@ export default Ember.Component.extend({
 				var promise = this.attrs.save(this.get('changeset'));
 				promise.then(function(){
 					if(promise._result != undefined){
-						var errorAttr = promise._result.campos[0];
-						document.getElementById('errors').style.display = 'block';
-						$('.errors-container').html('Ya existe un usuario con este '+errorAttr);
-						$('#'+errorAttr).addClass('has-error');
+						if(promise._result.tipo == 'Error'){							
+							var errorAttr = promise._result.campos[0];
+							document.getElementById('errors').style.display = 'block';
+							$('.errors-container').html('Ya existe un usuario con este '+errorAttr);
+							$('#'+errorAttr).addClass('has-error');							
+						}						
 					}					
 				});
 			}else{
