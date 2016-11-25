@@ -4,6 +4,8 @@ export default Ember.Route.extend({
   beforeModel(transition) {
     if (sessionStorage.creation == undefined) {
       this.transitionTo('cliente');
+    }else{
+    	sessionStorage.removeItem("creation");
     }
   }
 });
