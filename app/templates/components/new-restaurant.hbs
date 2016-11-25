@@ -1,25 +1,24 @@
-
 <h4><strong>Registrar Restaurante</strong></h4>
 <div id="root" align="center">
   <form id="form-register-restaurant" class="form-horizontal" {{action 'updateSystem' on="submit"}}>
       <div class="errors-container" id="errors"></div>
       <div class="form-group  {{if changeset.error.name_restaurant 'has-error'}}">
         <p>Nombre de Restaurante</p>
-        {{input placeholder="Ej: Taquitos" class="form-control" value=changeset.name_restaurant}}
+        {{input placeholder="Ej: Taquitos"  value=changeset.name_restaurant}}
         {{#if changeset.error.name_restaurant}}
         <span class="help-block">{{changeset.error.name_restaurant.validation}}</span>
         {{/if}}
       </div>
       <div class="form-group {{if changeset.error.email 'has-error'}} ">
         <p>Correo Electronico</p>
-        {{input placeholder="Ej. taquitos@taquitos.com" class="form-control" value=changeset.email}}
+        {{input placeholder="Ej. taquitos@taquitos.com"  value=changeset.email}}
         {{#if changeset.error.email}}
         <span class="help-block">{{changeset.error.email.validation}}</span>
         {{/if}}
       </div>
       <div class="form-group {{if changeset.error.description 'has-error'}}">
         <p>Descripción</p>
-        {{textarea placeholder="Ej. Comida mexicana de excelente sabor y calidad" class="form-control" value=changeset.description}}
+        {{input placeholder="Ej. Comida mexicana de excelente sabor y calidad"  value=changeset.description}}
         {{#if changeset.error.description}}
         <span class="help-block">{{changeset.error.description.validation}}</span>
         {{/if}}
