@@ -30,6 +30,8 @@ export default Ember.Controller.extend({
         if (ini !== '' && fin !== '') {
           var content = this.get('content');
           console.log(TAG+"content del controller="+content);
+          var store = this.get('store');
+          console.log(TAG+"store del controller="+store);
           return this.get('content').filter((item,index,self)=>isInRangeOfDates(ini,fin,item.get('dateInit')));
         } else {
           return this.get('store').peekAll('reservation');

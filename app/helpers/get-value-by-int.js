@@ -27,7 +27,6 @@ export function getValueByInt(params/*,hash*/) {
   let digit = params[1];
   console.log(TAG+"ejecutando helper...");
   console.log(TAG+"parametro model="+model);
-  debugger
   console.log(TAG+"parametro digit="+digit);
   switch (model) {
     case 'user':
