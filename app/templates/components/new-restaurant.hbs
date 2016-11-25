@@ -1,7 +1,5 @@
 
-<div class="page-header">
-  <h4><strong>Registra tu Restaurante</strong></h4>
-</div>
+<h4><strong>Registrar Restaurante</strong></h4>
 <div id="root" align="center">
   <form id="form-register-restaurant" class="form-horizontal" {{action 'updateSystem' on="submit"}}>
       <div class="errors-container" id="errors"></div>
@@ -28,7 +26,7 @@
       </div>
       <div class="form-group  {{if changeset.error.admin 'has-error'}}">
         <p>Administrador</p>
-        {{textarea placeholder="Id del admin" class="form-control" value=changeset.admin}}
+        {{input placeholder="Id del admin" class="form-control" value=changeset.admin}}
         {{#if changeset.error.admin}}
         <span class="help-block">{{changeset.error.admin.validation}}</span>
         {{/if}}

@@ -1,0 +1,26 @@
+<!-- Al llamar este componente, se le asigna un atributo reserva que contiene un objeto de tipo
+modelo de reservation, entonces aqui es recorrido-->
+<article class="listing">
+    <div class="detail idreserva">
+      <span>Id de reserva: </span>{{reserva.id}}
+    </div>
+    <div class="detail date">
+      <span>Fecha Inicio: </span>{{reserva.dateInit}}
+    </div>
+    <div class="detail date">
+      <span>Fecha Final: </span>{{reserva.dateEnd}}
+    </div>
+    <div class="detail amount_people">
+      <span>Cantidad de Personas: </span>{{reserva.amountPeople}}
+    </div>
+    <!--<div class="detail name_franchise">
+      <span>Franquicia: </span>{{reserva.franchise.name_franchise}}
+    </div>
+    <div class="detail id_table_restaurant">
+      <span>Numero de Mesa: </span>{{reserva.table.id_table_restaurant}}
+    </div>
+    <div class="detail table-capacity">
+      <span>Capacidad: </span>{{reserva.table.capacity}}
+    </div>-->
+  </article>
+{{yield}}
