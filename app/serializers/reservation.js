@@ -87,7 +87,7 @@ export default DS.JSONAPISerializer.extend({
     var auxPayload = {"data":[]};
 
     if(Em.isArray(payload)){
-        console.log(TAG + "payload es array .. length = " + payload.length);
+        console.log(TAG + "payload es array ... length = " + payload.length);
         payload.forEach((reserva)=>{
           console.log(TAG + "reserva obtenida = " + JSON.stringify(reserva));
           var aux ={};
@@ -99,7 +99,11 @@ export default DS.JSONAPISerializer.extend({
             "date-init":reserva.reservation.date_init,
             "date-end":reserva.reservation.date_end,
             "amount-people":reserva.reservation.amount_people,
-            "state":reserva.reservation.state
+            "state":reserva.reservation.state,
+            "table-capacity":reserva.table.capacity,
+            "user-name":reserva.user.name,
+            "name-franchise":reserva.franchise.name_franchise,
+            "payment-state":reserva.payment.state
           }
           console.log("[Serializer reservation]:aux normalizado = " + JSON.stringify(aux));
           auxPayload.data.push(aux);

@@ -3,16 +3,54 @@
     <h4><strong>Búsqueda de Reservas</strong></h4>
   </div>
 
-<!--El componente reservas-filter es usado, su atributo filter va a estar asociado con la accion
-filterByDate implementada en controller de reservas y los resultados de este metodo seran retornados
-en la variable reservas, que en el #each llamado lineas abajo, es recorrido y mostrado a traves de un
-*restaurant-listing*-->
+  <!--El componente reservas-filter es usado, su atributo filter va a estar asociado con la accion
+  filterByDate implementada en controller de reservas y los resultados de este metodo seran retornados
+  en la variable reservas, que en el #each llamado lineas abajo, es recorrido y mostrado a traves de un
+  *restaurant-listing*-->
   {{#reservas-filter filter=(action 'filterByDate') as |reservas|}}
-  <ul class="results">
-      {{#each reservas as |reservaUnit|}}
-        <li>{{reservas-listing reserva=reservaUnit}}</li>
-      {{/each}}
-    </ul>
+  <table class="table table-striped" style="color: white;">
+    <thead>
+    <tr>
+      <th>Id Reserva</th>
+      <th>Nombre del restaurante</th>
+      <th>Usuario</th>
+      <th>Estado</th>
+      <th>Fecha de Solicitud</th>
+      <th>Fecha de Reserva</th>
+      <th>Cantidad de personas</th>
+      <th># Mesa</th>
+      <th>Capacidad de la mesa</th>
+      <th>Estado de Pago</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each reservas as |reservaUnit|}}
+      <td>{{reservaUnit.id}}</td>
+      <td>{{reservaUnit.nameFranchise}}</td>
+      <td>{{reservaUnit.userName}}</td>
+      <td>{{reservaUnit.state}}</td>
+      <td>{{reservaUnit.dateInit}}</td>
+      <td>{{reservaUnit.dateEnd}}</td>
+      <td>{{reservaUnit.amountPeople}}</td>
+      <td>{{reservaUnit.tableRestaurant}}</td>
+      <td>{{reservaUnit.tableCapacity}}</td>
+      <td>{{reservaUnit.paymentState}}</td>
+    {{/each}}
+  </tbody>
+  </table>
+<!--
+  <ul>
+    {{#if}}
+      <div>
+      <th>No existe ninguna reserva bajo estas fechas</th>
+    </div>
+    {{else}}
+    {{#each reservas as |reservaUnit|}}
+    <li>{{reservas-listing reserva=reservaUnit}}</li>
+    {{/each}}
+    {{/if}}
+
+  </ul>-->
   {{/reservas-filter}}
 
 

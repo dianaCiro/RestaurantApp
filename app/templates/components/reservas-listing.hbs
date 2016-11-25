@@ -1,26 +1,35 @@
 <!-- Al llamar este componente, se le asigna un atributo reserva que contiene un objeto de tipo
 modelo de reservation, entonces aqui es recorrido-->
 <article class="listing">
-    <div class="detail idreserva">
-      <span>Id de reserva: </span>{{reserva.id}}
-    </div>
-    <div class="detail date">
-      <span>Fecha Inicio: </span>{{reserva.dateInit}}
-    </div>
-    <div class="detail date">
-      <span>Fecha Final: </span>{{reserva.dateEnd}}
-    </div>
-    <div class="detail amount_people">
-      <span>Cantidad de Personas: </span>{{reserva.amountPeople}}
-    </div>
-    <!--<div class="detail name_franchise">
-      <span>Franquicia: </span>{{reserva.franchise.name_franchise}}
-    </div>
-    <div class="detail id_table_restaurant">
-      <span>Numero de Mesa: </span>{{reserva.table.id_table_restaurant}}
-    </div>
-    <div class="detail table-capacity">
-      <span>Capacidad: </span>{{reserva.table.capacity}}
-    </div>-->
-  </article>
+  <div>
+  <span>Id de Reserva: </span>{{reserva.id}}
+</div>
+  <div>
+  <span>Nombre del restaurante: </span>{{reserva.nameFranchise}}
+</div>
+  <div>
+  <span>Usuario: </span>{{reserva.userName}}
+</div>
+  <div>
+  <span>Estado: </span>{{reserva.state}}
+</div>
+  <div>
+  <span>Fecha de Solicitud: </span>{{reserva.dateInit}}
+</div>
+  <div>
+  <span>Fecha de Reserva: </span>{{reserva.dateEnd}}
+</div>
+  <div>
+  <span>Cantidad de personas: </span>{{reserva.amountPeople}}
+</div>
+  <div>
+  <span># Mesa: </span>{{reserva.tableRestaurant}}
+</div>
+  <div>
+  <span>Capacidad de la mesa: </span>{{reserva.tableCapacity}}
+</div>
+  <div>
+  <span>Estado de Pago: </span>{{reserva.paymentState}}
+</div>
+</article>
 {{yield}}
