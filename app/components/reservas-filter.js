@@ -22,11 +22,12 @@ export default Ember.Component.extend({
       let filterInputValue2 = this.get('fechaEnd');
       console.log(TAG + "handleFilterDate argumentos tomados: filterInputValue1= "+filterInputValue1+
                               "filterInputValue2= "+filterInputValue2);
-      debugger
+
       var filterAction = this.get('filter');
       console.log(TAG + "filterAction obtenido de filter="+JSON.stringify(filterAction));
       var filteredResults = filterAction(filterInputValue1, filterInputValue2);
       console.log(TAG+"resultados de filterByDate en controlador =" + JSON.stringify(filteredResults));
+    
       this.set('results',filteredResults);
     }
   }
