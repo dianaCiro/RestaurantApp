@@ -8,52 +8,40 @@
   en la variable reservas, que en el #each llamado lineas abajo, es recorrido y mostrado a traves de un
   *restaurant-listing*-->
   {{#reservas-filter filter=(action 'filterByDate') as |reservas|}}
-  <table class="table" style="color: white;">
-    <thead>
-    <tr>
-      <th>Id Reserva</th>
-      <th>Nombre del restaurante</th>
-      <th>Usuario</th>
-      <th>Estado</th>
-      <th>Fecha de Solicitud</th>
-      <th>Fecha de Reserva</th>
-      <th>Cantidad de personas</th>
-      <th># Mesa</th>
-      <th>Capacidad de la mesa</th>
-      <th>Estado de Pago</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each reservas as |reservaUnit|}}
-    <tr>
-      <td>{{reservaUnit.id}}</td>
-      <td>{{reservaUnit.nameFranchise}}</td>
-      <td>{{reservaUnit.userName}}</td>
-      <td>{{getValueByInt "reservation" reservaUnit.state}}</td><!--requiere helper-->
-      <td>{{reservaUnit.dateInit}}</td>
-      <td>{{reservaUnit.dateEnd}}</td>
-      <td>{{reservaUnit.amountPeople}}</td>
-      <td>{{reservaUnit.tableRestaurant}}</td>
-      <td>{{reservaUnit.tableCapacity}}</td>
-      <td>{{getValueByInt "payment" reservaUnit.paymentState}}</td><!-- requiere helper-->
-    </tr>
-    {{/each}}
-  </tbody>
-  </table>
-
-<!--
-  <ul>
-    {{#if}}
-      <div>
-      <th>No existe ninguna reserva bajo estas fechas</th>
-    </div>
-    {{else}}
-    {{#each reservas as |reservaUnit|}}
-    <li>{{reservas-listing reserva=reservaUnit}}</li>
-    {{/each}}
-    {{/if}}
-
-  </ul>-->
+    <div id="root" align="center" style="width:100%;display:none;">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>Id Reserva</th>
+        <th>Nombre del restaurante</th>
+        <th>Usuario</th>
+        <th>Estado</th>
+        <th>Fecha de Solicitud</th>
+        <th>Fecha de Reserva</th>
+        <th>Cantidad de personas</th>
+        <th># Mesa</th>
+        <th>Capacidad de la mesa</th>
+        <th>Estado de Pago</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each reservas as |reservaUnit|}}
+      <tr>
+        <td>{{reservaUnit.id}}</td>
+        <td>{{reservaUnit.nameFranchise}}</td>
+        <td>{{reservaUnit.userName}}</td>
+        <td>{{getValueByInt "reservation" reservaUnit.state}}</td><!--requiere helper-->
+        <td>{{reservaUnit.dateInit}}</td>
+        <td>{{reservaUnit.dateEnd}}</td>
+        <td>{{reservaUnit.amountPeople}}</td>
+        <td>{{reservaUnit.tableRestaurant}}</td>
+        <td>{{reservaUnit.tableCapacity}}</td>
+        <td>{{getValueByInt "payment" reservaUnit.paymentState}}</td><!-- requiere helper-->
+      </tr>
+      {{/each}}
+    </tbody>
+    </table>
+  </div>
   {{/reservas-filter}}
 
 

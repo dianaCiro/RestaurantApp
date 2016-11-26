@@ -1,6 +1,27 @@
 <h4><strong>Lista de clientes</strong></h4>
-<div id = "root" align="center">
-  {{#each model as |clientUnit|}}
-    {{cliente-listing restaurant=clientUnit}}
-  {{/each}}
+<div id = "root" align="center" style="width:100%;">
+  <table class="table table-hover" >
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Usuario</th>
+      <th>Documento</th>
+      <th>Email</th>
+      <th>Rol</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |cliente|}}
+    <tr>
+      <td>{{cliente.id}}</td>
+      <td>{{cliente.name}}</td>
+      <td>{{cliente.username}}</td>
+      <td>{{cliente.identification}}</td>
+      <td>{{cliente.email}}</td>
+      <td>{{getValueByInt "user" cliente.role}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+  </table>
 </div>
