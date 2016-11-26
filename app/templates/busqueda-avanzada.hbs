@@ -1,25 +1,10 @@
 <h4><strong>Busqueda Avanzada</strong></h4>
-<div id="root" align="center">
-  <form id="form-advanced" class="form-horizontal">
-    <div>
-      <div class="form-group">
-        <p>¿En cuál lugar desea comer?</p>
-        {{input placeholder="Ciudad" valueBinding="city"}}
-      </div>
-      <div class="form-group">
-        <p>Ingrese una puntuación</p>
-        {{input placeholder="Puntuacion" valueBinding="points"}}
-      </div>
-      <div class="form-group">
-        <p>Tipo de cocina</p>
-        {{input placeholder="Tipo de Cocina" valueBinding="cook"}}
-      </div>
-      <div class="form-group ">
-        <p>Rango de Precios</p>
-        {{input placeholder="Precio Menor" valueBinding="minPrice"}} {{input placeholder="Precio Mayor" valueBinding="maxPrice"}}
-      </div>
-      <button id = "boton" class=" btn  btn-lg">Buscar</button>
-       </div>
-  </form>
-  </div>
-  {{outlet}}
+<div>
+  {{#busqueda-avanzada-filter filter=(action 'filterAdvanced') as |restaurants|}}
+      <ul class='results'>
+        {{#each restaurants as |restaurantUnit|}}
+            <li>{{restaurans-listing restaurant=restaurantUnit}}</li>
+        {{/each}}
+      </ul>
+  {{/busqueda-avanzada-filter}}
+</div>

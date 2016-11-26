@@ -1,5 +1,5 @@
 import Ember from 'ember';
-const TAG = "[Component reservas-filter.js]: ";
+const TAG = "[Component busqueda-filter.js]: ";
 console.log(TAG + "Entrando a componente de busqueda-filter");
 export default Ember.Component.extend({
   classNames: ['busqueda-filter'],
