@@ -25,13 +25,13 @@
       </div>
       <div class="form-group  {{if changeset.error.admin 'has-error'}}">
         <p>Administrador</p>
-        {{input placeholder="Id del admin" class="form-control" value=changeset.admin}}
+        {{input placeholder="Id del admin" value=changeset.admin}}
         {{#if changeset.error.admin}}
         <span class="help-block">{{changeset.error.admin.validation}}</span>
         {{/if}}
       </div>
-      <button class=" btn btn-primary btn-lg" {{action 'save'}}>Registrar</button>
-      <button class=" btn btn-primary btn-lg" {{action 'rollback'}}>Cancelar</button>
+      <button id = "boton" class=" btn  btn-lg" {{action 'save'}}>Registrar</button>
+      <button id = "boton" class=" btn  btn-lg" {{action 'rollback'}}>Borrar datos de formulario</button>
   </form>
 </div>
 {{outlet}}

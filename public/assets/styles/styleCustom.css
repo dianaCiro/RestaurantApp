@@ -47,7 +47,7 @@ body {
   background-color: #212121;
 }
 
-select, input {
+select, input, #boton, textarea, .texto, #buscar-reservas{
   font-family: "Lato", sans-serif;
   color: #3C0403;
   display: block;
@@ -64,7 +64,7 @@ select, input {
   transition: border 0.3s;
   background-color: rgba(0, 0, 0, 0.02);
 }
-select:focus, input:focus {
+select:focus, input:focus, #boton:focus, textarea:focus, .texto:focus, #buscar-reservas:focus {
   outline: none;
   border-bottom: solid 3px #3C0403;
 }
@@ -74,6 +74,17 @@ input[type="submit"]{
   transition: background-color 0.15s, color 0.15s;
 }
 input[type="submit"]:hover{
+  background-color: #3C0403;
+  color: #C8A667;
+}
+
+
+#boton, #buscar-reservas{
+  margin-top: 15px;
+  border-bottom: solid 3px #3C0403;
+  transition: background-color 0.15s, color 0.15s;
+}
+#boton:hover, #buscar-reservas:hover{
   background-color: #3C0403;
   color: #C8A667;
 }

@@ -13,7 +13,7 @@ export default {
     }),
     validateLength({
       max: 20,
-      message: ' Tamaño del nombre de franquicia demasiado largo'
+      message: ' Nombre de franquicia demasiado largo'
     })
   ],
   id_restaurant: [
@@ -34,6 +34,27 @@ export default {
       message: 'Se requiere la dirección de la franquicia'
     }),
 
+  ],
+  phone: [
+     validateNumber({
+      integer: true,
+      positive: true,
+      message: ' Número no válido'
+    })
+  ],
+  latitude: [
+     validateNumber({
+      integer: true,
+      positive: true,
+      message: ' Latitud no válida'
+    })
+  ],
+  longitude: [
+     validateNumber({
+      integer: true,
+      positive: true,
+      message: ' Longitud no válida'
+    })
   ],
   description: [
     validateLength({

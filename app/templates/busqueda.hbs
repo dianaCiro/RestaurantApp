@@ -1,8 +1,5 @@
-<div  align="center">
- <div class="page-header">
-  <h1>Búsqueda de Restaurantes<small></small></h1>
-</div >
-
+<h4><strong>Búsqueda de Restaurantes</strong></h4>
+<div>
 {{#busqueda-filter filter=(action 'filterByName') as |restaurants|}}
   <ul class='results'>
     {{#each restaurants as |restaurantUnit|}}
@@ -10,5 +7,4 @@
     {{/each}}
   </ul>
 {{/busqueda-filter}}
-
 </div>

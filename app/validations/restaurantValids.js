@@ -13,7 +13,7 @@ export default {
     }),
     validateLength({
       max: 20,
-      message: ' Tamaño del nombre de restaurante demasiado largo'
+      message: ' Nombre de restaurante demasiado largo'
     })
   ],
   email: [
