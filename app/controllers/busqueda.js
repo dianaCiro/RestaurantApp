@@ -11,7 +11,8 @@ export default Ember.Controller.extend({
        var content = this.get('content');
        console.log(TAG+"content del controller="+content);
        //console.log(TAG+"store del controller="+store);
-       return this.get('content').filter((item,index,self)=>item.get('name_restaurant') === param);
+       //return this.get('store').queryRecord('restaurant', {name_restaurant:param});
+       return this.get('content').filter((item,index,self)=>item.get('name_restaurant').includes(param));
      }else{
        //console.log(TAG+"store del controller="+store);
        return this.get('store').peekAll('restaurant');

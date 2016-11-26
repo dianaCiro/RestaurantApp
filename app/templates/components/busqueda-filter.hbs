@@ -1,15 +1,12 @@
-<div id="root" alingn="center">
+<div id="root-filter" align="center">
   <form class="form-horizontal" id="form-busqueda">
     <fieldset>
       <div class="form-group" align="center">
-        <div class="errors-container" id="errors"></div>
-        <div  align="center">
-          Nombre del restaurante {{input type="text" size=200px value=name}}
-        </div>
-        <br>
-        <button id = "boton" class=" btn  btn-lg" {{action 'handleFilterName'}}>Buscar</button>
+            Nombre del restaurante {{input type="text" size=200px value=name class="form-control" key-up=(action 'handleFilterName')}}
       </div>
     </fieldset>
+    <div class="errors-container" id="errors"></div>
+    <button id = "boton" class=" btn  btn-lg" {{action 'handleFilterName'}}>Buscar</button>
   </form>
 </div>
 {{yield results}}

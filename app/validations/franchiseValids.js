@@ -44,15 +44,13 @@ export default {
   ],
   latitude: [
      validateNumber({
-      integer: true,
-      positive: true,
+      type: 'decimal',
       message: ' Latitud no válida'
     })
   ],
   longitude: [
      validateNumber({
-      integer: true,
-      positive: true,
+      type: 'decimal',
       message: ' Longitud no válida'
     })
   ],
