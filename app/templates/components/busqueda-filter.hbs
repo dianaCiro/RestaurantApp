@@ -1,0 +1,15 @@
+<div id="root" alingn="center">
+  <form class="form-horizontal" id="form-busqueda">
+    <fieldset>
+      <div class="form-group" align="center">
+        <div class="errors-container" id="errors"></div>
+        <div style="float: left; width:45%;margin:5px;" align="center">
+          Nombre Restaurante {{input type="text" size=200px value=name}}
+        </div>
+        <br>
+        <button class="btn btn-primary btn-lg" {{action 'handleFilterName'}}>Buscar</button>
+      </div>
+    </fieldset>
+  </form>
+</div>
+{{yield results}}

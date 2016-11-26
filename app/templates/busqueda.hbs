@@ -1,31 +1,14 @@
-<h4><strong>Buscar Restaurantes</strong></h4>
+<div  align="center">
+ <div class="page-header">
+  <h1>Búsqueda de Restaurantes<small></small></h1>
+</div >
 
-<div id="root" align="center">
-  <form id="form-create" class="form-horizontal">
-    <fieldset>
-      <div class="form-group">
-        <p>Búsqueda por nombre</p>
-        <div class="input-group">
-            {{input placeholder="Nombre" type='text'  value = filterText}}
-            <ul>
-              {{#each item in filteredResults}}
-                <li>{{item}}</li>
-              {{/each}}
-            </ul>
-            <div class="input-group-btn">
-              <button type="submit" {{action "applyFilter"}} class="btn btn-default" aria-label="Searc">
-              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-            </button>
-            </div>
-          </div>
+{{#busqueda-filter filter=(action 'filterByName') as |restaurants|}}
+  <ul class='results'>
+    {{#each restaurants as |restaurantUnit|}}
+      <li>{{restaurans-listing restaurant=restaurantUnit}}</li>
+    {{/each}}
+  </ul>
+{{/busqueda-filter}}
 
-      </div>
-    </fieldset>
-    <!-- Standard button -->
-
-    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-    <br>
-    {{#link-to 'busqueda_avanzada'}}<button type="button" class="btn btn-danger">Búsqueda Avanzada</button>{{/link-to}}
-  </form>
 </div>
-{{outlet}}

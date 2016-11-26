@@ -1,31 +1,21 @@
 import Ember from 'ember';
+const TAG = "[Controller busqueda.js]: ";
+console.log(TAG + "Entrando a controller de ruta buscada");
+
 
 export default Ember.Controller.extend({
-  filter: '',
-  filterText: '',
-  filteredResults: function() {
-   var filter = this.get('filter');
-     return new Ember.RSVP.Promise(resolve => {
-       this.store.findAll('restaurant').then(services => {
-         resolve(services.filterBy('name_restaurant',filter));
-       });
-     });
- }.property('filter'),
- actions:{
-   applyFilter(){
-     alert("Buscando");
-     this.set('filter', this.get('filterText'));
+  actions: {
+   filterByName(param){
+     console.log("El filtro se esta ejecutando " +  param);
+     if (param != '') {
+       var content = this.get('content');
+       console.log(TAG+"content del controller="+content);
+       //console.log(TAG+"store del controller="+store);
+       return this.get('content').filter((item,index,self)=>item.get('name_restaurant') === param);
+     }else{
+       //console.log(TAG+"store del controller="+store);
+       return this.get('store').peekAll('restaurant');
+     }
    }
- }
-
-  /*actions:{
-    findRecord(params) {
-      alert("Buscando");
-      return new Ember.RSVP.Promise(resolve => {
-        this.store.findAll('restaurant').then(services => {
-          resolve(services.filterBy('name_restaurant',params));
-        });
-      });
-    }
-  }*/
+  }
 });
