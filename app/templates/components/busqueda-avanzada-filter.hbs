@@ -1,0 +1,18 @@
+<div id="root" align="center">
+    <form id="form-advanced" class="form-horizontal">
+        <fieldset>
+          <div class="form-group" align="center">
+              <div class="errors-container" id="errors"></div>
+              <div  align="center">
+                  Email del restaurante {{input type="text" size=200px value=name}}
+              </div>
+              <div  align="center">
+                  Descripción del restaurante {{input type="text" size=200px value=description}}
+              </div>
+              <br>
+              <button id = "boton" class=" btn  btn-lg" {{action 'handleFilterAdv'}}>Buscar</button>
+          </div>
+        </fieldset>
+    </form>
+</div>
+{{yield results}}
