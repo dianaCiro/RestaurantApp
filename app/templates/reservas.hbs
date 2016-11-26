@@ -25,6 +25,7 @@
   </thead>
   <tbody>
     {{#each reservas as |reservaUnit|}}
+    <tr>
       <td>{{reservaUnit.id}}</td>
       <td>{{reservaUnit.nameFranchise}}</td>
       <td>{{reservaUnit.userName}}</td>
@@ -35,6 +36,7 @@
       <td>{{reservaUnit.tableRestaurant}}</td>
       <td>{{reservaUnit.tableCapacity}}</td>
       <td>{{getValueByInt "payment" reservaUnit.paymentState}}</td><!-- requiere helper-->
+    </tr>
     {{/each}}
   </tbody>
   </table>

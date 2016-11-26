@@ -68,10 +68,10 @@ export function getValueByInt(params/*,hash*/) {
     case 'payment':
     switch (digit) {
       case 0:
-      return 'Pagada';
+      return 'No Pagada';
       break;
       case 1:
-      return 'No Pagada'
+      return 'Pagada'
       break;
     }
     break;

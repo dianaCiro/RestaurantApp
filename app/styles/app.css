@@ -130,7 +130,7 @@ h4 {
 .errors-container {
     display: none;
     list-style-type: disc;
-    margin: 0 10px 15px 10px;
+    margin: 15px 10px 15px 10px;
     padding: 8px 35px 8px 30px;
     color: #D8C197 ;
     background-color: #F2DEDE;

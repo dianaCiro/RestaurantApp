@@ -1,17 +1,17 @@
 <div id="root-reservas" align="center">
   <form id="form-busqueda-reservas" class="form-horizontal">
     <fieldset>
-    <div class="form-group" align="center">
-      <div class="errors-container" id="errors"></div>
-      <div style="float: left;width: 45%;margin: 5px;" align="center">
-          Fecha Inicio{{input type="date" size=200px value=fechaStart placeholder="start"}}
+        <div class="form-group" style="float: left;width: 45%;margin: 5px;" align="center" id="mDate">
+          Fecha Inicio{{input id="mDate" type="date" size=200px value=fechaStart placeholder="start" class="form-control"}}
       </div>
-      <div style="float: left;width: 45%;margin: 5px;" align="center">
-          Fecha Fin{{input type="date" value=fechaEnd placeholder="end"}}
+      <div class="form-group" style="float: right;width: 45%;margin: 5px;" align="center" id="mDate">
+          Fecha Fin{{input type="date" value=fechaEnd placeholder="end" class="form-control"}}
       </div>
-    </div>
-    <button id="buscar-reservas" class="btn btn-primary btn-lg" {{action 'handleFilterDate'}}>Buscar</button>
     </fieldset>
+    <div class="errors-container" id="errors" style="margin-bottom: 10px;"></div>
+    <button id="buscar-reservas" class="btn btn-primary btn-lg" {{action 'handleFilterDate'}}>Buscar</button>
+
   </form>
 </div>
+<br>
 {{yield results}}
