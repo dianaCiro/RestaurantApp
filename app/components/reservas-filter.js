@@ -18,6 +18,7 @@ export default Ember.Component.extend({
   actions: {
     handleFilterDate() {
       document.getElementById('errors').style.display = 'none';
+      document.getElementById('root').style.display = 'block';
       console.log(TAG + "handleFilterDate es lanzado");
       let filterInputValue1 = this.get('fechaStart');
       let filterInputValue2 = this.get('fechaEnd');
@@ -29,6 +30,7 @@ export default Ember.Component.extend({
       var filteredResults = filterAction(filterInputValue1, filterInputValue2);
       if(filteredResults.length==0 && filterInputValue1!="" && filterInputValue2!=""){
         document.getElementById('errors').style.display = 'block';
+        document.getElementById('root').style.display = 'none';
         $('.errors-container').html('No existen reservas pagadas en este rango de fechas');
         $('.form-group').addClass('has-error');
       }

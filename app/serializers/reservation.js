@@ -59,10 +59,6 @@ DS.JSONAPISerializer
       "latitude": 6.2465769,
       "longitude": -75.59389277777777,
       "open_time_week": "08:00",
-      "close_time_week": "20:00",
-      "open_time_weekend": "08:00",
-      "close_time_weekend": "22:00"
-    },
     "payment": {
       "id_payment": 1,
       "reservation": 10,
